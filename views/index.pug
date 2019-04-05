@@ -1,0 +1,17 @@
+extends default
+
+block content
+    .container
+        each person in people
+            .person
+                .person-image(style='background: url("/images/${person.imgSrc}") top center
+                no-repeat; background-size: cover;')
+                h2.person-name
+                    | #{person.firstname} #{person.lastname}
+                a(href='/profile?id=${person.id}')
+                    | View Profile
+
+
+// res.render('index', {
+//   title: 'Homepage'
+// });
